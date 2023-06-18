@@ -5,6 +5,7 @@ import WatchedList from "./components/WatchedList";
 import Logo from "./components/Logo";
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
+import StarRating from "./components/StarRating";
 
 const tempMovieData = [
   {
@@ -74,6 +75,7 @@ export default function App() {
       <main className="main">
 
 <MovieList isOpen1={isOpen1} movies={movies} setIsOpen1={setIsOpen1}/>
+
         <div className="box">
           <button
             className="btn-toggle"
@@ -84,7 +86,9 @@ export default function App() {
           {isOpen2 && (
           <WatchedList watched={watched}/>
           )}
+          <StarRating maxRating={3}/>
         </div>
+      
       </main>
     </>
   );
