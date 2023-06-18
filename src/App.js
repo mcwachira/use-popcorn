@@ -2,6 +2,9 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import MovieList from "./components/MovieList";
 import WatchedList from "./components/WatchedList";
+import Logo from "./components/Logo";
+import SearchBar from "./components/SearchBar";
+import Results from "./components/Results";
 
 const tempMovieData = [
   {
@@ -53,7 +56,7 @@ const tempWatchedData = [
 
 
 export default function App() {
-  const [query, setQuery] = useState("");
+
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
   const [isOpen1, setIsOpen1] = useState(true);
@@ -62,7 +65,11 @@ export default function App() {
 
   return (
     <>
-   <Navbar movies={movies} query={query} setQuery={setQuery}/>
+   <Navbar>
+   <Logo/>
+     <SearchBar/>
+   <Results movies={movies}/>
+   </Navbar>
 
       <main className="main">
 
